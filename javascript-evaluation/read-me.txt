@@ -1,0 +1,116 @@
+1) difference between == and === operator?
+    The 3 equal signs mean "equality without type coercion". Using the triple equals, the values must be equal in type as well.
+            0 == false   // true
+            0 === false  // false, because they are of a different type
+            1 == "1"     // true, automatic type conversion for value only
+            1 === "1"    // false, because they are of a different type
+            null == undefined // true
+            null === undefined // false
+            '0' == false // true
+            '0' === false // false
+
+3)how to reverse a string ?
+        There are many methods to reverse a string in JavaScript some of them are discussed below:
+Method 1:
+    1.Check the input string that if the given string is empty or just have one character or it is not of string type then it return “Not Valid string”.
+    2.If the above condition false create an array where we can store the result. Here revArray[] is the new array.
+    3.Loop through the array from the end to the beginning and push each and every item in the array revArray[].
+    4.Use join() prebuilt function in JavaScript to join the elements of an array into a string.
+
+
+
+Method 2 :
+    1.Use split() inbuilt function in JavaScript to split string into array of characters i.e. [ ‘i’, ‘ ’, ‘l’, ‘o’, ‘v’, ‘e ‘, ‘ ’, ‘a’, ‘p’, ‘p ‘, ‘l’, ‘e’, ‘s’ ]
+    2.Use reverse() function in JavaScript to reversal the array of characters i.e. [ ‘s’, ‘e’, ‘l’, ‘p’, ‘p ‘, ‘a’, ‘ ’, ‘e’, ‘v ‘, ‘o’, ‘l’, ‘ ’, ‘i’ ]
+    3.Use join() function in JavaScript to join the elements of an array into a string.  
+ 
+ 
+Method 3:
+    1.Use spread operator instead of split() function to convert string into array of characters i.e. [‘i’, ‘ ’, ‘l’, ‘o’, ‘v’, ‘e ‘, ‘ ’, ‘a’, ‘p’, ‘p ‘, ‘l’, ‘e’, ‘s’ ].
+    2.Use reverse() function in JavaScript to reversal the array of characters i.e. [‘s’, ‘e’, ‘l’, ‘p’, ‘p ‘, ‘a’, ‘ ’, ‘e’, ‘v ‘, ‘o’, ‘l’, ‘ ’, ‘i’ ]
+    3.Use join() function in JavaScript to join the elements of an array into a string.
+ 
+ 
+ 4) reverse words of a sentence:
+        we can do the above task by splitting and saving the string in a reverse manner. 
+        The split() method splits a string into an array of substrings.
+
+        The split() method returns the new array.The split() method does not change the original string.
+        If (" ") is used as separator, the string is split between words.
+
+5) check palindrome:
+    1.use builtin function split() to convert string into array of characters
+    2.use reverse() function to reverse the array of characters
+    3.use join() function to join the elements
+    4.compare it with the originla string using strict equality opoerator. 
+    5.if value is true its a palindrome ,if value is false not a palindrome.
+
+6)difference between forEach and map :
+    forEach :This method allows you to execute a callback function by iterating through each element of an array.
+             Always remember that it doesn’t return anything and if you try to get the value it will be undefined.
+    map()   :It is almost identical to forEach method and executes a callback function to loop over an array easily.
+             But the difference is it returns a new array always, so that means it also doesn’t change our source array. 
+             It is, therefore, an immutable operation.A great thing about the map method is that it’s also chainable, meaning 
+             you can call a number of map operations in a row.
+
+    If you’re planning to alter the array, we should use map the function, since it doesn’t change the original array and returns a new array.
+     But if you won’t need the returned array, and just want to loop through all elements of an array, use the forEach or even a for loop.
+
+
+7)Genarate random number between 1 and 5:
+    math - used for mathematical operations
+    math.floor() - rounds a number DOWN to the nearest integer
+    math.ceil() - rounds a number UP to the nearest integer 
+    math.random() - always returns a number between 0(inclusive) and 1(exclusive)
+
+8) remove duplicate of an array:
+   approach1 :1.destructure the array using spread operator 
+              2.create a new set using sets all the duplicates are removed 
+   approach2 :1.use filter to create a new array filled with elements that pass a test provided by a function. 
+              2. within the filter function an arrow function is created with indexof() method to get the first occurence of the value and it
+              is compared with the actual index of value . if it returns true value is added to array . duplicates are removed here.
+
+11) Merge two array:
+        two arrays can be merged easily using the spread operator
+	
+12) remove duplicate from an array of an object by id and name:
+        1.create an empty array to add new array of objects.
+        2.use filter function to create a new array with the elemnts that passed the condition 
+        3.condition id given inside the filter by using includes method to the element id. if condition true dont pass any element into the array
+        if condition is false push the value into the array. duplicates are removed.
+
+13)compare two objects and return true or false:
+        The dot notation and bracket notation both are used to access the object properties in JavaScript. 
+        The dot notation is used mostly as it is easier to read and comprehend and also less verbose.
+        The main difference between dot notation and bracket notation is that the bracket notation allows us to access
+         object properties using variable.
+
+14) take multi-dimensional array and flat the array;
+        1. I used flat method to flat the array. ES2019 introduced the Array.prototype.flat() method that creates a new array 
+        with all the elements of the subarrays concatenated to it recursively up to a specified depth.
+
+        The following shows the syntax of the flat() method:
+                let newArray = arrayObject.flat([depth])
+        
+        2.The depth parameter specifies how deep the method flats the array structure. It defaults to 1.
+        3.When you don’t know the depth level, you can pass the Infinity into the flat() method to recursively concatenate 
+        all elements of the sub-arrays into the new array
+
+
+19)Diamond pattern:
+        I have used process.stdout.write instead if console.log here because It is useful for printing patterns as it does not add a new line.
+        It only takes strings as arguments. Any other data type passed as a parameter will throw a TypeError.
+
+20) a.console.log:The log() method writes (logs) a message to the console.The log() method is useful for testing purposes.
+    b.console.dir:The method console.dir() displays an interactive list of the properties of the specified JavaScript object.
+    The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
+    c.console.count:The count() method counts the number of times console.count() is called.The count() method this number to the console.
+    d.console.table:The table() method writes a table to the console.
+    e.console.time/timeLog/timeEnd:The time() method starts a timer in the console view.it allows you to time code for testing purposes.
+    The console.timeLog() method logs the current value of a timer that was previously started by calling console.time() to the console.
+    The console.timeEnd() stops a timer that was previously started by calling console.time().
+    f.console.trace:The console.trace() method outputs a stack trace to the Web console.
+    g.console.group/groupEnd: The console.group() method creates a new inline group in the Web console log, causing any subsequent console messages to be indented by an additional level, until console.groupEnd() is called.
+    The console.groupEnd() method exits the current inline group in the Web console.
+    h.console.assert:The console.assert() method writes an error message to the console if the assertion is false. If the assertion is true, nothing happens.
+
